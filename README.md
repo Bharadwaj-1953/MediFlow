@@ -1,5 +1,5 @@
 <h1 align="center">
-AWS–Powered Medical Data Integration and Mining for Improved Healthcare
+Cloud-Native Medical Data Integration and Mining System
 </h1>
 
 ---
@@ -8,9 +8,9 @@ AWS–Powered Medical Data Integration and Mining for Improved Healthcare
 
 <div align="justify">
 
-This project presents   PDFM (Privacy-free Data Fusion and Mining)  , a cloud-based application built on AWS for integrating and analyzing distributed medical data across healthcare systems. PDFM aims to support healthcare professionals by providing real-time access to multi-source medical information while preserving user privacy. The system uses four modules (Admin, Doctor, Patient, IOH) and securely stores medical data in AWS S3 buckets.
+MediFlow is a cloud-native application built on AWS for integrating and analyzing distributed medical data across healthcare systems. MediFlow aims to support healthcare professionals by providing real-time access to multi-source medical information while preserving user privacy. The system uses four modules (Admin, Doctor, Patient, IOH) and securely stores medical data in AWS S3 buckets.
 
-PDFM leverages the   Internet of Health (IoH)   paradigm and implements privacy-aware techniques like   Locality Sensitive Hashing (LSH)   to handle multi-source data mining and retrieval efficiently. The project is deployed on   AWS EC2  , ensuring scalable computation and secure data storage.
+MediFlow leverages the **Internet of Health (IoH)** paradigm and implements privacy-aware techniques like **Locality Sensitive Hashing (LSH)** to handle multi-source data mining and retrieval efficiently. The project is deployed on **AWS EC2**, ensuring scalable computation and secure data storage.
 
 </div>
 
@@ -20,9 +20,9 @@ PDFM leverages the   Internet of Health (IoH)   paradigm and implements privacy-
 
 - Enable secure, privacy-respecting integration of medical data across healthcare sources.
 - Design and implement a scalable 4-module architecture (Admin, Doctor, Patient, IOH).
-- Use   Locality Sensitive Hashing (LSH)   for multi-source data integration and privacy-preserving record search.
-- Leverage   AWS S3   for secure, cost-effective storage.
-- Enhance disaster diagnosis accuracy and clinical decision-making using real-time data.
+- Use **Locality Sensitive Hashing (LSH)** for multi-source data integration and privacy-preserving record search.
+- Leverage **AWS S3** for secure, cost-effective storage.
+- Enhance diagnostic accuracy and clinical decision-making using real-time data.
 
 ---
 
@@ -94,9 +94,9 @@ sudo service mysql start
 
 # Create database and user
 echo "Creating MySQL database..."
-mysql -u root -e "CREATE DATABASE meddata_db;
-  CREATE USER 'meduser'@'localhost' IDENTIFIED BY 'medpass';
-  GRANT ALL PRIVILEGES ON meddata_db.* TO 'meduser'@'localhost';
+mysql -u root -e "CREATE DATABASE mediflow_db;
+  CREATE USER 'mediuser'@'localhost' IDENTIFIED BY 'medipass';
+  GRANT ALL PRIVILEGES ON mediflow_db.* TO 'mediuser'@'localhost';
   FLUSH PRIVILEGES;"
 
 # Show confirmation
@@ -111,17 +111,20 @@ export FLASK_ENV=development
 
 echo "✅ Environment ready. Use 'flask run' to start the server."
 ```
+
 To run it:
-```
+
+```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 
 ---
 
-📂 Project Structure
+## 📂 Project Structure
+
 ```
-AWS-MedData/
+MediFlow/
 ├── app.py                # Main Flask application
 ├── templates/            # HTML pages
 │   ├── login.html
